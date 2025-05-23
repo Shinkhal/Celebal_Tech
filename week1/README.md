@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# 📋 React Registration Form with Validation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple React-based registration form that performs **real-time validation** without using any third-party form libraries. It showcases form validation, controlled inputs, dynamic dropdowns, password show/hide functionality, and navigation on successful form submission.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+* ✅ Required field validation
+* ✅ Real-time error display
+* ✅ Submit button disabled until form is valid
+* ✅ Show/Hide password toggle
+* ✅ Country and city dropdown (dependent)
+* ✅ Form data displayed on a new route after submission
+* ✅ No third-party validation libraries used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies Used
 
-### `npm test`
+* **React** (with hooks)
+* **React Router DOM** (for routing)
+* **Pure JavaScript validation**
+* **Tailwind CSS** 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧾 Form Fields
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. First Name (required)
+2. Last Name (required)
+3. Username (required)
+4. E-mail (required, must be valid format)
+5. Password (required, with show/hide toggle)
+6. Phone Number
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   * Country Code (e.g. `+91`)
+   * Number (required)
+7. Country (dropdown, required)
+8. City (dropdown based on country, required)
+9. PAN Number (required, format: `ABCDE1234F`)
+10. Aadhar Number (required, 12 digits)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📦 Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/Shinkhal/Celebal_Tech
+cd Celebal_Tech
+cd week1
+npm install
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧪 Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Fill out the form on the home page (`/`).
+2. The "Submit" button will be disabled until all fields are valid.
+3. Upon successful submission, you will be redirected to the `/success` page showing all submitted values.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 Folder Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── components/
+│   ├── FormPage.jsx
+│   └── SuccessPage.jsx
+├── App.jsx
+└── index.js
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🔐 Validation Rules
 
-### Analyzing the Bundle Size
+| Field         | Rule                            |
+| ------------- | ------------------------------- |
+| Email         | Must be a valid email format    |
+| Phone Number  | Must be a valid phone number format |
+| Country Code  | Must be a valid country code    |
+|Password       | Must be a strong password       |
+| PAN Number    | 10 characters (e.g. ABCDE1234F) |
+| Aadhar Number | 12 digits only                  |
+| All Fields    | Required                        |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
