@@ -1,13 +1,15 @@
-// src/pages/Tables.jsx
-import React from 'react';
+import React from "react";
+import DataTable from "../components/DataTable";
+import { columns } from "../components/column";
+import { tableData } from "../data/tableData";
 
-const Tables = () => {
+function Tables() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Tables</h1>
-      <p className="text-gray-600 dark:text-gray-300">Data tables will appear here.</p>
+    <div className="p-6">
+      <h2 className="text-2xl font-semibold mb-4 text-black dark:text-white">Users Table</h2>
+      <DataTable data={tableData} columns={columns} />
     </div>
   );
-};
+}
 
 export default Tables;
