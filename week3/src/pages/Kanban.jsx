@@ -1,15 +1,24 @@
-// src/pages/Kanban.jsx
 import React from 'react';
-import KanbanBoard from '../components/KanbanBoard';
+import { KanbanComponent, ColumnsDirective, ColumnDirective } from '@syncfusion/ej2-react-kanban';
 
-const Kanban = () => {
-  return (
-    <div  className='bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md'>
-      <h1 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Kanban Board</h1>
-      <p className="text-gray-600 dark:text-gray-300">Your drag-and-drop board will go here.</p>
-        <KanbanBoard />
-    </div>
-  );
-};
+import { kanbanData, kanbanGrid } from '../data/dummy';
+import { Header } from '../components';
+
+const Kanban = () => (
+  <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+    <Header category="App" title="Kanban" />
+    <KanbanComponent
+      id="kanban"
+      keyField="Status"
+      dataSource={kanbanData}
+      cardSettings={{ contentField: 'Summary', headerField: 'Id' }}
+    >
+      <ColumnsDirective>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        {kanbanGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
+      </ColumnsDirective>
+    </KanbanComponent>
+  </div>
+);
 
 export default Kanban;
